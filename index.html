@@ -3,15 +3,15 @@
   LA BELLEZA TIENE UN LÍMITE — Jules Golemann
   Web de la novela (novela negra). Página única y autónoma.
   Textos con  ⟶ CAMBIAR  = revisar/ajustar (enlaces de compra, redes,
-  y la cita de El Cultural, transcrita de la contraportada).
-  El formulario de correo es solo visual (falta conectarlo a un servicio).
+  y la cita de Lectura editorial, transcrita de la contraportada).
+  La reserva se realiza por WhatsApp para avisos de stock en Librería Vistahermosa; no hay pago online.
 -->
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>La belleza tiene un límite — Jules Golemann</title>
-<meta name="description" content="Un cadáver. Una desaparición. Una ciudad que miente. El debut noir de Jules Golemann, un thriller de dos tiempos en El Puerto de Santa María." />
+<meta name="description" content="Novela negra en El Puerto de Santa María: un cadáver en Puerto Sherry, una desaparición en Vista Hermosa y una herida de la Guerra Civil que sigue abierta." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Oswald:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -184,10 +184,14 @@
 
   /* BANDA SONORA */
   .sound{ display:grid; grid-template-columns:auto 1fr; gap:clamp(24px,5vw,56px); align-items:center; }
-  .qr{ width:132px; height:132px; display:grid; grid-template-columns:repeat(9,1fr); grid-template-rows:repeat(9,1fr);
-    gap:2px; padding:10px; background:#0b0f18; border:1px solid var(--edge); }
-  .qr i{ background:var(--bone); }
-  .qr i.off{ background:transparent; }
+  .qr-set{ display:flex; gap:16px; flex-wrap:wrap; }
+  .qr-card{ display:flex; flex-direction:column; align-items:center; gap:9px; text-decoration:none;
+    background:#fff; padding:12px 12px 10px; border:1px solid var(--edge); transition:transform .25s, box-shadow .25s; }
+  .qr-card img{ width:128px; height:128px; display:block; image-rendering:pixelated; }
+  .qr-card span{ font-family:var(--mono); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:#0b0f18; }
+  .qr-card:hover, .qr-card:focus-visible{ transform:translateY(-2px); box-shadow:0 0 26px rgba(233,162,76,.28); }
+  .sound-links a{ color:var(--amber); border-bottom:1px solid transparent; transition:.2s; }
+  .sound-links a:hover{ border-color:var(--amber); }
   .sound-body h2{ margin-bottom:.5em; }
   .sound-body p{ color:#c3cad6; font-weight:300; max-width:52ch; margin-bottom:1.4em; }
 
@@ -226,6 +230,12 @@
     font-size:clamp(1.5rem,3vw,2.1rem); margin:.35em 0 .5em; letter-spacing:.02em; }
   .buy-card > p{ color:#c3cad6; font-weight:300; margin-bottom:1.4em; }
   .buy-card .btn{ width:100%; text-align:center; }
+  .price-strip{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:1.2em 0 1.4em; }
+  .price-box{ border:1px solid var(--edge); background:rgba(255,255,255,.025); padding:12px 13px; }
+  .price-box strong{ display:block; font-family:var(--display); font-size:1.08rem; letter-spacing:.04em; text-transform:uppercase; color:var(--bone); line-height:1.1; }
+  .price-box span{ display:block; margin-top:.35em; font-family:var(--mono); font-size:.68rem; letter-spacing:.09em; color:var(--amber); }
+  .price-box small{ display:block; margin-top:.35em; font-family:var(--mono); font-size:.58rem; letter-spacing:.04em; color:var(--mute); line-height:1.45; text-transform:none; }
+  @media(max-width:520px){ .price-strip{ grid-template-columns:1fr; } }
 
   .reserva{ display:flex; flex-direction:column; gap:12px; margin-top:.2em; }
   .reserva label{ font-family:var(--mono); font-size:.63rem; letter-spacing:.16em; text-transform:uppercase;
@@ -312,10 +322,10 @@
         <h1 class="hook">
           <span>Un cadáver.</span>
           <span>Una desaparición.</span>
-          <span class="r">Una ciudad que miente.</span>
+          <span class="r">Una ciudad demasiado hermosa para ser inocente.</span>
         </h1>
-        <p class="lede">El debut de Jules Golemann: un thriller de dos tiempos donde la Guerra Civil todavía sangra bajo el vino, la luz y los apellidos de la costa.</p>
-        <p class="tag">Algunos secretos nunca deberían salir a la luz.</p>
+        <p class="lede">Una novela negra de dos tiempos: la elegancia de El Puerto, el filo de la memoria y una verdad enterrada bajo el vino, la luz y los apellidos de siempre.</p>
+        <p class="tag">Hay verdades que no prescriben. Solo esperan.</p>
         <div class="cta-row">
           <a class="btn" href="#comprar">Consíguela</a>
           <a class="btn ghost" href="#caso">Leer la sinopsis</a>
@@ -333,7 +343,7 @@
     <div class="wrap">
       <span class="mono eyebrow2">El escenario</span>
       <h2>Puerto Sherry</h2>
-      <p>El Puerto de Santa María · donde la luz esconde las sombras</p>
+      <p>El Puerto de Santa María · la luz también sabe mentir</p>
     </div>
   </section>
 
@@ -343,13 +353,13 @@
     <div class="wrap case-grid reveal" style="margin-top:clamp(48px,8vw,90px)">
       <div class="case-label">
         <span class="mono sec-eyebrow">Expediente 01 — El caso</span>
-        <h2 class="sec">Una ciudad de luz que esconde <em>demasiadas sombras</em></h2>
+        <h2 class="sec">La belleza también deja cadáveres</h2>
       </div>
       <div class="case-prose who">
-        <p class="first">Un cadáver en el puerto más exclusivo. Una desaparición en el club de golf. Una ciudad de luz, vino y apellidos que esconde demasiadas sombras.</p>
-        <p>El inspector <b style="color:var(--bone);font-weight:400">Víctor Ros</b> vuelve a El Puerto de Santa María para acudir junto a su madre, pero lo que parecía un descanso se convierte en una investigación que conecta la ejecución de un capo ruso, legajos perdidos de la Guerra Civil y una red de corrupción dispuesta a todo. A su lado, <b style="color:var(--bone);font-weight:400">Marta Sánchez</b>, inspectora de Asuntos Internos de lealtades imposibles de leer.</p>
-        <p>Porque el verdadero enigma no es solo quién mató a quién, <span class="pull">sino hasta dónde estamos dispuestos a llegar por aquello que admiramos y no podemos poseer.</span></p>
-        <p class="stamp">Aquí la belleza tiene un precio<br>y los secretos, un límite.</p>
+        <p class="first">Un cadáver aparece en el puerto más exclusivo. Una desaparición sacude el club de golf. Y El Puerto de Santa María, con su luz perfecta y sus apellidos intactos, empieza a mostrar lo que siempre había preferido callar.</p>
+        <p>El inspector <b style="color:var(--bone);font-weight:400">Víctor Ros</b> vuelve a El Puerto de Santa María por una razón íntima: acompañar a su madre. Pero lo que debía ser un regreso contenido se convierte en una investigación que enlaza la ejecución de un capo ruso, papeles de la Guerra Civil y una trama de poder que no se improvisó ayer. A su lado, <b style="color:var(--bone);font-weight:400">Marta Sánchez</b>, inspectora de Asuntos Internos: brillante, incómoda y de lealtades imposibles de leer.</p>
+        <p>Porque el verdadero enigma no consiste solo en saber quién mató a quién, sino en descubrir cuánto daño puede causar el deseo cuando se disfraza de amor, de prestigio o de belleza.</p>
+        <p class="stamp">En esta novela, la belleza<br>no salva: acusa.</p>
       </div>
     </div>
   </section>
@@ -358,33 +368,33 @@
   <section class="block times-sec">
     <div class="wrap reveal">
       <span class="mono sec-eyebrow">La estructura</span>
-      <h2 class="sec">Dos tiempos, una misma <em>herida</em></h2>
+      <h2 class="sec">Dos tiempos, una culpa que no se entierra</h2>
       <div class="times" id="times">
         <div class="col t-past">
           <span class="yr">1936 — 1939</span>
           <h3>El pasado</h3>
-          <p>Legajos perdidos de la Guerra Civil. Nombres tachados, expedientes que alguien prefirió que nunca aparecieran. Una herida que la ciudad enterró sin cerrar.</p>
+          <p>Legajos perdidos de la Guerra Civil. Nombres tachados. Familias que aprendieron a convivir con el silencio. Lo que no se juzgó entonces regresa, décadas después, convertido en amenaza.</p>
         </div>
         <div class="divider" aria-hidden="true"></div>
         <div class="col t-now">
           <span class="yr">Hoy</span>
           <h3>El presente</h3>
-          <p>Un capo ruso ejecutado, un puerto de lujo y una red de corrupción dispuesta a todo. La misma sangre vieja, ahora sobre el asfalto mojado.</p>
+          <p>Un cadáver en Puerto Sherry, una desaparición en Vista Hermosa y una red de corrupción que sabe vestir bien. La sangre es nueva; la culpa, no.</p>
         </div>
       </div>
       <div class="review">
         <!-- ⟶ CAMBIAR: cita transcrita de la contraportada; revisa el texto exacto -->
-        <blockquote>«Golemann construye una trama de dos tiempos con la precisión de un guionista noir: la guerra civil como herida abierta, el presente donde esa herida todavía sangra. <span class="cine">Cine en papel.</span>»</blockquote>
-        <cite>El Cultural</cite>
+        <blockquote>«Una novela negra de atmósfera luminosa y fondo turbio: El Puerto como escenario, la memoria como amenaza y la belleza como forma sofisticada de violencia. <span class="cine">Cine en papel.</span>»</blockquote>
+        <cite>Lectura editorial</cite>
       </div>
-      <p class="escenario-cap mono"><b>La casa grande.</b> Escenario de buena parte de la novela.</p>
+      <p class="escenario-cap mono"><b>La casa grande.</b> Donde la memoria familiar deja de ser decorado.</p>
     </div>
   </section>
 
   <!-- ══════════ PERSONAJES ══════════ -->
   <section class="block">
     <div class="wrap reveal">
-      <span class="mono sec-eyebrow">Los dos lados de la mesa</span>
+      <span class="mono sec-eyebrow">Los que miran y los que esconden</span>
       <h2 class="sec">Quién <em>investiga</em></h2>
       <div class="cast">
         <article class="card">
@@ -392,7 +402,7 @@
           <div class="card-body">
             <span class="role">Inspector</span>
             <h3>Víctor Ros</h3>
-            <p>Vuelve al Puerto buscando descanso y cuidar de su madre. Encuentra un muerto en el muelle bueno y un caso que lo ata, otra vez, a la ciudad de la que se fue.</p>
+            <p>Vuelve al Puerto para cuidar de su madre y medir la distancia con la vida que dejó atrás. Pero un muerto en Puerto Sherry lo obliga a mirar de nuevo una ciudad que conoce demasiado bien y que, aun así, nunca termina de confesarlo todo.</p>
           </div>
         </article>
         <article class="card">
@@ -400,7 +410,7 @@
           <div class="card-body">
             <span class="role">Asuntos Internos</span>
             <h3>Marta Sánchez</h3>
-            <p>Lealtades imposibles de leer. Nadie sabe de qué lado juega, y a ratos parece que ni ella. En este puerto, saber en quién confiar cuesta caro.</p>
+            <p>Inspectora de Asuntos Internos. Inteligente, fría cuando conviene y peligrosa porque escucha más de lo que dice. Nadie sabe del todo de qué lado juega; quizá por eso es la única capaz de acercarse a la verdad.</p>
           </div>
         </article>
       </div>
@@ -410,12 +420,21 @@
   <!-- ══════════ BANDA SONORA ══════════ -->
   <section class="block" style="background:linear-gradient(180deg,var(--night),var(--night-2))">
     <div class="wrap sound reveal">
-      <div class="qr" aria-hidden="true"></div>
+      <div class="qr-set">
+        <a class="qr-card" href="https://open.spotify.com/playlist/5SigXyyR5CBdtAsQIVEkjA" target="_blank" rel="noopener">
+          <img src="data:image/png;base64,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" alt="Código QR de la banda sonora en Spotify" />
+          <span>Spotify</span>
+        </a>
+        <a class="qr-card" href="https://bit.ly/4xjyLEw" target="_blank" rel="noopener">
+          <img src="data:image/png;base64,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" alt="Código QR de la banda sonora en Apple Music" />
+          <span>Apple Music</span>
+        </a>
+      </div>
       <div class="sound-body">
         <span class="mono sec-eyebrow" style="color:var(--amber)">Extra dentro del libro</span>
         <h2 class="sec">La novela <em>suena</em></h2>
-        <p>La belleza tiene un límite trae su propia banda sonora. Dentro encontrarás códigos QR: escanéalos y deja que la música acompañe cada tramo de la investigación, capítulo a capítulo.</p>
-        <a class="btn ghost" href="#">Escuchar un adelanto</a> <!-- ⟶ CAMBIAR enlace -->
+        <p>La novela trae su propia banda sonora. Los códigos QR no son un adorno: abren una segunda capa de lectura, una forma de entrar en la investigación por el oído, capítulo a capítulo.</p>
+        <p class="sound-links">Escanéalos con el móvil —o toca para abrir— y escúchala en <a href="https://open.spotify.com/playlist/5SigXyyR5CBdtAsQIVEkjA" target="_blank" rel="noopener">Spotify</a> o <a href="https://bit.ly/4xjyLEw" target="_blank" rel="noopener">Apple Music</a>.</p>
       </div>
     </div>
   </section>
@@ -429,7 +448,7 @@
         <span class="mono sec-eyebrow" style="color:var(--blood)">La autora</span>
         <h2>Jules Golemann</h2>
         <p class="birth">Nueva York, 1983</p>
-        <p>Licenciada en Literatura Inglesa por Columbia University, ha vivido en distintos países junto a su marido, diplomático español. Fue en Andalucía donde encontró la voz que daría forma a su debut.</p>
+        <p>Licenciada en Literatura Inglesa por Columbia University, ha vivido en distintos países junto a su marido, diplomático español. En Andalucía encontró el contraste que sostiene esta novela: una luz deslumbrante y, debajo, una sombra antigua.</p>
         <p><i>La belleza tiene un límite</i> es su primera novela.</p>
         <div class="author-links">
           <a class="ig-btn" href="https://www.instagram.com/jules_golemann1" target="_blank" rel="noopener">
@@ -448,12 +467,12 @@
       <div class="panel">
         <div>
           <span class="mono sec-eyebrow">Causa solidaria</span>
-          <h2>Leer también ayuda</h2>
+          <h2>Leer también puede ayudar</h2>
           <p>AEGEFYS es la asociación española que impulsa la investigación y acompaña a los afectados por la glomeruloesclerosis focal y segmentaria (GEFS), una enfermedad renal poco frecuente. La creó una paciente para que nadie tenga que afrontar el diagnóstico en soledad.</p>
-          <p>Por eso, parte de esta aventura es solidaria: <b style="color:var(--bone);font-weight:400">colabora con AEGEFYS y te envío un ejemplar firmado</b> de la novela. Tu aportación va para la asociación.</p>
+          <p>Por eso esta novela mantiene una vía solidaria independiente: <b style="color:var(--bone);font-weight:400">puedes hacer un donativo directo a AEGEFYS</b>. La compra de la novela y el donativo son actos separados; el dinero de la donación no pasa por el autor ni por la librería.</p>
         </div>
         <div class="aeg-side">
-          <a class="btn amber" href="https://www.aegefys.com/colabora" target="_blank" rel="noopener">Colabora con AEGEFYS</a>
+          <a class="btn amber" href="https://www.aegefys.com/colabora" target="_blank" rel="noopener">Colaborar con AEGEFYS</a>
           <p class="mono" style="margin-top:1.2em;font-size:.68rem;letter-spacing:.1em;color:var(--mute);text-transform:none">aegefys.com · investigación de la GEFS</p>
         </div>
       </div>
@@ -464,80 +483,77 @@
   <section class="buy" id="comprar">
     <div class="reveal buy-inner">
       <span class="mono sec-eyebrow" style="color:var(--blood)">Consíguela</span>
-      <h2>Elige cómo la quieres</h2>
-      <p class="buy-sub">Dos caminos: al instante en Amazon, o directa desde mí — firmada y con la dedicatoria que me pidas.</p>
+      <h2>Elige cómo entrar en la historia</h2>
+      <p class="buy-sub">Compra online en Amazon, pregunta por ella en Librería Vistahermosa o reserva por WhatsApp si no quieres quedarte sin ejemplar dedicado en la próxima tanda.</p>
 
       <div class="buy-grid">
         <!-- Amazon -->
         <div class="buy-card">
-          <span class="bc-tag">Al instante</span>
+          <span class="bc-tag">Canal principal</span>
           <h3>En Amazon</h3>
-          <p>Tapa dura o ebook, con el envío de Amazon. La vía más rápida si no necesitas dedicatoria.</p>
+          <p>La forma más rápida de conseguir <i>La belleza tiene un límite</i>: tapa blanda, tapa dura o ebook, con la comodidad y el envío de Amazon.</p>
+          <div class="price-strip" aria-label="Precios de venta en Amazon">
+            <div class="price-box">
+              <strong>Tapa blanda</strong>
+              <span>19,99 €</span>
+              <small>PVP Amazon</small>
+            </div>
+            <div class="price-box">
+              <strong>Tapa dura</strong>
+              <span>24 €</span>
+              <small>PVP Amazon</small>
+            </div>
+          </div>
           <a class="btn" href="https://www.amazon.es/dp/B0GZVTKYK4" target="_blank" rel="noopener">Comprar en Amazon</a>
         </div>
 
-        <!-- Edición solidaria: donación íntegra a AEGEFYS -->
+        <!-- Librería + reserva por WhatsApp -->
         <div class="buy-card featured">
-          <span class="bc-tag">Firmada · solidaria</span>
-          <h3>Ejemplar solidario</h3>
-          <p>Aquí yo no me llevo nada: <b style="color:var(--bone);font-weight:400">tu aportación va íntegra a AEGEFYS</b>. Colabora con la asociación y te envío el ejemplar firmado con tu dedicatoria. Mi único cobro es que la leas.</p>
-          <a class="btn amber" href="https://www.aegefys.com/colabora" target="_blank" rel="noopener" style="width:100%;text-align:center;margin-bottom:1.2em">1 · Colabora con AEGEFYS</a>
-          <p class="mono" style="font-size:.64rem;letter-spacing:.12em;color:var(--mute);text-transform:uppercase;margin-bottom:1em">2 · Envíame tus datos y te lo mando firmado</p>
+          <span class="bc-tag">En El Puerto · ejemplar dedicado</span>
+          <h3>Librería Vistahermosa</h3>
+          <p>Si prefieres comprarla en El Puerto de Santa María, pregunta por ella en <b style="color:var(--bone);font-weight:400">Librería Vistahermosa</b>. Y si no hubiera stock, no te quedes sin ejemplar: resérvalo por WhatsApp para la próxima tanda.</p>
+          <p>También puedes indicar el nombre para una dedicatoria personalizada.</p>
           <form class="reserva" id="reserva" novalidate>
-            <label>Nombre y apellidos
-              <input type="text" id="r-name" required autocomplete="name" />
-            </label>
-            <div class="f-two">
-              <label>Correo
-                <input type="email" id="r-email" autocomplete="email" />
-              </label>
-              <label>Teléfono
-                <input type="tel" id="r-phone" autocomplete="tel" />
-              </label>
-            </div>
-            <label>Dirección de envío
-              <textarea id="r-addr" rows="2" placeholder="Calle y número, CP, población"></textarea>
+            <label>Tu nombre
+              <input type="text" id="r-name" autocomplete="name" placeholder="Para saber de quién es la reserva" />
             </label>
             <div class="f-two">
               <label>Formato
                 <select id="r-format">
-                  <option>Tapa dura (firmable)</option>
-                  <option>Ebook</option>
+                  <option>Tapa blanda — 19,99 €</option>
+                  <option>Tapa dura — 24 €</option>
                 </select>
               </label>
               <label>Ejemplares
                 <input type="number" id="r-qty" min="1" value="1" />
               </label>
             </div>
-            <label class="chk"><input type="checkbox" id="r-ded" /> Quiero dedicatoria personalizada</label>
-            <div class="ded-box" id="r-dedbox" hidden>
-              <label>¿A nombre de quién?
-                <input type="text" id="r-dedto" />
-              </label>
-              <label>Mensaje o detalle
-                <textarea id="r-dedmsg" rows="2"></textarea>
-              </label>
-            </div>
+            <label>Nombre para dedicatoria, si procede
+              <input type="text" id="r-dedto" placeholder="Déjalo en blanco si no quieres dedicatoria" />
+            </label>
             <button type="submit" class="btn wa">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
-              Enviar mis datos por WhatsApp
+              Reservar por WhatsApp
             </button>
-            <p class="reserva-alt">¿Prefieres correo? <a href="#" id="r-mail">Escríbeme y te la reservo</a></p>
+            <p class="reserva-alt">La reserva no implica pago previo. La compra se realizará directamente en librería cuando haya ejemplares disponibles.</p>
           </form>
-          <p class="pay-note">Tu aportación va íntegra a AEGEFYS. Yo solo pongo el libro firmado; el envío lo acordamos por WhatsApp.</p>
+          <p class="pay-note">Privacidad: los datos que envíes por WhatsApp se usarán solo para gestionar esta reserva y preparar la dedicatoria solicitada. No se utilizarán para publicidad.</p>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Vistahermosa%20Librer%C3%ADa%20Papeler%C3%ADa&query_place_id=ChIJVUO16BbQDQ0R_G_sAmlkPws" target="_blank" rel="noopener" style="margin-top:1em">Cómo llegar</a>
+          <p class="mono" style="margin-top:1.1em;font-size:.64rem;letter-spacing:.1em;color:var(--mute);text-transform:none">C. de Enmedio, 3 · El Puerto de Santa María</p>
         </div>
 
-        <!-- Recoger en librería (aparece en la novela) -->
+        <!-- Donación directa a AEGEFYS -->
         <div class="buy-card">
-          <span class="bc-tag">En persona</span>
-          <h3>En la librería</h3>
-          <p>Resérvala y recógela en <b style="color:var(--bone);font-weight:400">Vistahermosa Librería Papelería</b>, en el mismo Vista Hermosa que protagoniza un capítulo entero de la novela. La pagas allí, en mano.</p>
-          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Vistahermosa%20Librer%C3%ADa%20Papeler%C3%ADa&query_place_id=ChIJVUO16BbQDQ0R_G_sAmlkPws" target="_blank" rel="noopener">Cómo llegar</a>
-          <p class="mono" style="margin-top:1.1em;font-size:.64rem;letter-spacing:.1em;color:var(--mute);text-transform:none">C. de Enmedio, 3 · El Puerto de Santa María</p>
+          <span class="bc-tag">Donación independiente</span>
+          <h3>Apoya a AEGEFYS</h3>
+          <p>Si además quieres colaborar con AEGEFYS, hazlo mediante donativo directo a la asociación. La compra de la novela y el donativo son independientes.</p>
+          <p>Como gesto de agradecimiento, el autor podrá reservar algunos ejemplares firmados para sortearlos o entregarlos entre quienes colaboren en campañas vinculadas a la novela.</p>
+          <a class="btn amber" href="https://www.aegefys.com/colabora" target="_blank" rel="noopener">Donar a AEGEFYS</a>
+          <p class="pay-note">El dinero de la donación no pasa por el autor ni por la librería.</p>
         </div>
       </div>
 
-      <p class="fineprint">Los ejemplares firmados se imprimen bajo pedido: la entrega tarda unos días más, pero llega dedicada de mi mano.</p>
+      <p class="fineprint">Amazon es el canal principal de venta online. La reserva por WhatsApp sirve solo para avisos de disponibilidad y dedicatorias en Librería Vistahermosa.</p>
     </div>
   </section>
 
@@ -566,48 +582,30 @@
     p.forEach(v=>{const i=document.createElement('i'); if(!v)i.className='off'; qr.appendChild(i);});
   }
 
-  // ── Reserva -> WhatsApp / correo (sin servidor) ──
-  const WHATSAPP='34619753011';           // WhatsApp de reservas
-  const EMAIL='hola@julesgolemann.com';   // ⟶ CAMBIAR: tu correo de reservas
+  // ── Reserva por WhatsApp para Librería Vistahermosa (sin servidor) ──
+  const WHATSAPP='34619753011';
   const R=id=>document.getElementById(id);
 
-  const ded=R('r-ded'), dedbox=R('r-dedbox');
-  if(ded){ ded.addEventListener('change',()=>{ dedbox.hidden=!ded.checked; }); }
-
   function buildMsg(){
-    const name=(R('r-name').value||'').trim();
-    if(!name){ R('r-name').focus(); return null; }
     const qty=R('r-qty').value||'1';
     const fmt=R('r-format').value;
-    let m='¡Hola Jules! He colaborado con AEGEFYS y quiero mi ejemplar firmado de «La belleza tiene un límite».\n';
-    m+='\n• Nombre: '+name;
-    m+='\n• Formato: '+fmt+' ×'+qty;
-    if(R('r-ded').checked){
-      m+='\n• Dedicatoria: sí';
-      const to=(R('r-dedto').value||'').trim(), msg=(R('r-dedmsg').value||'').trim();
-      if(to) m+=' — a nombre de "'+to+'"';
-      if(msg) m+=' — mensaje: "'+msg+'"';
-    }
-    const addr=(R('r-addr').value||'').trim();
-    const em=(R('r-email').value||'').trim(), ph=(R('r-phone').value||'').trim();
-    if(addr) m+='\n• Envío a: '+addr;
-    if(em) m+='\n• Correo: '+em;
-    if(ph) m+='\n• Teléfono: '+ph;
-    m+='\n\n(Aportación hecha a AEGEFYS)';
+    const ded=(R('r-dedto').value||'').trim();
+    const name=(R('r-name').value||'').trim();
+    let m='Hola, quiero reservar un ejemplar de «La belleza tiene un límite» en Librería Vistahermosa.';
+    m+='\n\nNombre: '+(name||'(sin indicar)');
+    m+='\nFormato: '+fmt;
+    m+='\nNúmero de ejemplares: '+qty;
+    m+='\nNombre para dedicatoria, si procede: '+(ded || '');
+    m+='\n\nEntiendo que esta reserva no implica pago previo y que la compra se realizará directamente en la librería cuando haya ejemplares disponibles.';
     return m;
   }
 
   const rf=R('reserva');
   if(rf){
     rf.addEventListener('submit',(ev)=>{ ev.preventDefault();
-      const m=buildMsg(); if(m===null) return;
+      const m=buildMsg();
       window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(m),'_blank','noopener');
     });
-    const ml=R('r-mail');
-    if(ml){ ml.addEventListener('click',(ev)=>{ ev.preventDefault();
-      const m=buildMsg(); if(m===null) return;
-      window.location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Reserva — La belleza tiene un límite')+'&body='+encodeURIComponent(m);
-    }); }
   }
 </script>
 </body>
